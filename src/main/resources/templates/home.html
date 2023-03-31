@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head> 
+        <title>FindCEP</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container mt-5 min-vh-100">
+            <p th:text="${info}"></p>
+            <form method="post" th:action="@{buscar}">
+                <div class="input-group mb-3 gap-3">
+                    <input required class="form-control" placeholder="Digite o CEP que deseja pesquisar" name="cep" id="cep" />
+                    <button class="btn-primary" type="submit">Buscar</button>
+                </div>
+            </form>
+            <span th:if="${endereco != null}">
+                <h2>Endereço:</h2>
+                <div class="mb-3">
+                    <label class="form-label">CEP</label>
+                    <input class="form-group" th:value="${endereco.cep}" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Logradouro</label>
+                    <input class="form-group" th:value="${endereco.logradouro}" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Complemento</label>
+                    <input class="form-group" th:value="${endereco.complemento}" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Bairro</label>
+                    <input class="form-group" th:value="${endereco.bairro}" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Localidade</label>
+                    <input class="form-group" th:value="${endereco.localidade}" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">UF</label>
+                    <input class="form-group" th:value="${endereco.uf}" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">IBGE</label>
+                    <input class="form-group" th:value="${endereco.ibge}" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">GIA</label>
+                    <input class="form-group" th:value="${endereco.gia}" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">DDD</label>
+                    <input class="form-group" th:value="${endereco.ddd}" disabled />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">SIAFI</label>
+                    <input class="form-group" th:value="${endereco.siafi}" disabled />
+                </div>
+
+            </span>
+        </div>
+        <br />
+    </body>
+</html>
