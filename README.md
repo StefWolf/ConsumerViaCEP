@@ -10,3 +10,4 @@ Criei essa aplicação com o objetivo de reforçar as experiências que venho ad
 
 ![Imagem](img.png)
 
+Vídeo Apresentação: https://www.youtube.com/watch?v=j41r6JJb2iY
